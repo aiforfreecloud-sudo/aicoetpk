@@ -1,7 +1,7 @@
 # Aicoetpk Graph Supermemory — Product Status
 
-**Snapshot revision:** `4901d4cbadcf2636f4aefab4eadb11f01f9b00d8`
-**Generated:** 8 August 2026, 10:45 Asia/Kuala_Lumpur
+**Snapshot revision:** `13e8c649c96a5bdd75e0ea68695f4cde9469907b`
+**Generated:** 8 August 2026, 11:40 Asia/Kuala_Lumpur
 **Language:** en-GB
 **Review status:** human-readable engineering snapshot; implementation claims below are source-verified only
 
@@ -57,7 +57,7 @@ A translation or summary must preserve uncertainty and citation links; it must n
 
 ## Sources
 
-- Repository source at the snapshot revision: <https://github.com/aiforfreecloud-sudo/aicoetpk/tree/4901d4cbadcf2636f4aefab4eadb11f01f9b00d8>
-- Worker entry point: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/4901d4cbadcf2636f4aefab4eadb11f01f9b00d8/src/index.ts>
-- D1 migration: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/4901d4cbadcf2636f4aefab4eadb11f01f9b00d8/migrations/0001_create_comments_table.sql>
+- Repository source at the snapshot revision: <https://github.com/aiforfreecloud-sudo/aicoetpk/tree/13e8c649c96a5bdd75e0ea68695f4cde9469907b>
+- Worker entry point: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/13e8c649c96a5bdd75e0ea68695f4cde9469907b/src/index.ts>
+- D1 migration: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/13e8c649c96a5bdd75e0ea68695f4cde9469907b/migrations/0001_create_comments_table.sql>
 - Cloudflare D1 documentation: <https://developers.cloudflare.com/d1/>
