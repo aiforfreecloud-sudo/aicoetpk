@@ -1,59 +1,64 @@
-# Worker + D1 Database
+# Aicoetpk Graph Supermemory
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/d1-template)
+Aicoetpk is intended to become a repository knowledge and Graph Supermemory platform for ingesting Git repositories, ZIP archives, and local directories, then publishing cited project knowledge, reviewed translations, Mermaid mind maps, optional Graphity artefacts, repository-scoped MCP, chat, share links, administration, background processing, incremental updates, and authenticated messaging webhooks.
 
-![Worker + D1 Template Preview](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/cb7cb0a9-6102-4822-633c-b76b7bb25900/public)
+## Current implementation status
 
-<!-- dash-content-start -->
+This public repository is presently a **Cloudflare Workers + D1 starter template**, not the complete Graph Supermemory product. The verified application currently executes `SELECT * FROM comments LIMIT 3` against a D1 database and renders the result as HTML. No product feature is described as implemented without source evidence.
 
-D1 is Cloudflare's native serverless SQL database ([docs](https://developers.cloudflare.com/d1/)). This project demonstrates using a Worker with a D1 binding to execute a SQL statement. A simple frontend displays the result of this query:
+See the evidence-backed capability matrix in [`docs/PRODUCT_STATUS.md`](docs/PRODUCT_STATUS.md). It separates current implementation, documented target design, generated knowledge, and planned work.
 
-```SQL
-SELECT * FROM comments LIMIT 3;
+## Current starter behaviour
+
+- Worker entry point: `src/index.ts`
+- HTML renderer: `src/renderHtml.ts`
+- D1 migration: `migrations/0001_create_comments_table.sql`
+- Worker/D1 configuration: `wrangler.json`
+- Package checks: `npm run check`
+
+## Product direction
+
+The intended architecture is described as a target, not a claim of completion:
+
+- **Knowledge ingestion:** Git repositories, ZIP archives, and local directories.
+- **Knowledge outputs:** truthful README summaries, project overviews, wiki/document catalogues, document content, reviewed multi-language translations, Mermaid mind maps, and optional Graphity artefacts.
+- **Public discovery:** SEO-friendly repository routes at `/{owner}/{repo}`, `/{owner}/{repo}/mindmap`, and `/{owner}/{repo}/graphify`.
+- **Access surfaces:** repository-scoped MCP, built-in chat, embedded chat APIs, and share links.
+- **Administration:** repositories, users, roles, departments, API keys, AI providers/models, skills, MCP providers, and GitHub App imports.
+- **Workers:** idempotent background ingestion, translation, mind-map, Graphity, and incremental-update processing.
+- **Integrations:** authenticated Feishu, QQ, WeChat, and Slack webhook adapters.
+
+Generated knowledge should always identify its source revision, generation time, citations, language, and review status. See [`docs/PRODUCT_STATUS.md`](docs/PRODUCT_STATUS.md) for the proposed contract and the next safe implementation slices.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
 ```
 
-The D1 database is initialized with a `comments` table and this data:
+Run type-checking and the Wrangler dry-run validation:
 
-```SQL
-INSERT INTO comments (author, content)
-VALUES
-    ('Kristian', 'Congrats!'),
-    ('Serena', 'Great job!'),
-    ('Max', 'Keep up the good work!')
-;
+```bash
+npm run check
 ```
 
-> [!IMPORTANT]
-> When using C3 to create this project, select "no" when it asks if you want to deploy. You need to follow this project's [setup steps](https://github.com/cloudflare/templates/tree/main/d1-template#setup-steps) before deploying.
+Apply the migration locally and start the development server:
 
-<!-- dash-content-end -->
-
-## Getting Started
-
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
-
-```
-npm create cloudflare@latest -- --template=cloudflare/templates/d1-template
+```bash
+npm run dev
 ```
 
-A live public deployment of this template is available at [https://d1-template.templates.workers.dev](https://d1-template.templates.workers.dev)
+Deploy only after reviewing the Wrangler configuration and applying the migration to the intended D1 database:
 
-## Setup Steps
+```bash
+npm run deploy
+```
 
-1. Install the project dependencies with a package manager of your choice:
-   ```bash
-   npm install
-   ```
-2. Create a [D1 database](https://developers.cloudflare.com/d1/get-started/) with the name "d1-template-database":
-   ```bash
-   npx wrangler d1 create d1-template-database
-   ```
-   ...and update the `database_id` field in `wrangler.json` with the new database ID.
-3. Run the following db migration to initialize the database (notice the `migrations` directory in this project):
-   ```bash
-   npx wrangler d1 migrations apply --remote d1-template-database
-   ```
-4. Deploy the project!
-   ```bash
-   npx wrangler deploy
-   ```
+Do not commit `.env` files, API keys, OAuth tokens, cookies, private keys, credentials, or database dumps.
+
+## Repository
+
+- Public repository: <https://github.com/aiforfreecloud-sudo/aicoetpk>
+- Product status snapshot: [`docs/PRODUCT_STATUS.md`](docs/PRODUCT_STATUS.md)
