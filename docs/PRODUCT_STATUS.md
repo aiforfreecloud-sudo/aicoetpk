@@ -1,7 +1,7 @@
 # Aicoetpk Graph Supermemory — Product Status
 
-**Snapshot revision:** `13e8c649c96a5bdd75e0ea68695f4cde9469907b`
-**Generated:** 8 August 2026, 11:40 Asia/Kuala_Lumpur
+**Snapshot revision:** `960424965cfdfd0437f39951bea6f408a67397df`
+**Generated:** 8 August 2026, 12:50 Asia/Kuala_Lumpur
 **Language:** en-GB
 **Review status:** human-readable engineering snapshot; implementation claims below are source-verified only
 
@@ -13,26 +13,28 @@ The product intent is retained below as a traceable implementation target. “Pl
 
 ## Evidence-backed status table
 
-| Capability | Status in this revision | Evidence or gap |
-|---|---|---|
-| Cloudflare Worker entry point | **Implemented** | `src/index.ts` exports the Worker handler. |
-| D1 comments demo | **Implemented** | `src/index.ts` runs `SELECT * FROM comments LIMIT 3`; `migrations/0001_create_comments_table.sql` creates and seeds `comments`. |
-| Git repository ingestion | **Planned** | No GitHub import, clone, or repository-ingestion code is present. |
-| ZIP archive ingestion | **Planned** | No archive upload or extraction pipeline is present. |
-| Local-directory ingestion | **Planned** | No local-directory intake contract or worker is present. |
-| README summaries and project overviews | **Planned** | No knowledge extraction or summary pipeline is present. |
-| Wiki/document catalogue and document content | **Planned** | No document index, storage model, or retrieval route is present. |
-| Reviewed multi-language translations | **Planned** | No translation workflow, language metadata, or review state is present. |
-| Mermaid mind maps | **Planned** | No mind-map generator, validator, or route is present. |
-| Optional Graphity artefacts | **Planned** | No Graphity adapter or artefact contract is present. |
-| SEO routes `/{owner}/{repo}`, `/mindmap`, `/graphify` | **Planned** | No route router or repository-scoped rendering is present. |
-| Repository-scoped MCP | **Planned** | No MCP server, tool registry, or repository authorization layer is present. |
-| Built-in chat and embedded chat APIs | **Planned** | No chat UI, API, model-provider adapter, or conversation store is present. |
-| Share links | **Planned** | No share-token or public-view implementation is present. |
-| Administration | **Planned** | No users, roles, departments, repositories, API keys, providers/models, skills, MCP providers, or GitHub App administration is present. |
-| Background processing and incremental updates | **Planned** | No queue, idempotency key, worker, checkpoint, or update-diff implementation is present. |
-| Feishu, QQ, WeChat, Slack webhooks | **Planned** | No authenticated webhook adapters or signature verification are present. |
-| Deployment evidence | **Partial** | `wrangler.json` contains a Worker/D1 configuration, but this inspection did not establish a live Aicoetpk deployment URL or successful remote deployment. |
+| Capability or evidence | Evidence class | Status in this revision | Evidence or gap |
+|---|---|---|---|
+| Cloudflare Worker entry point | **Implemented** | Present | `src/index.ts` exports the Worker handler. |
+| D1 comments demo | **Implemented** | Present | `src/index.ts` runs `SELECT * FROM comments LIMIT 3`; `migrations/0001_create_comments_table.sql` creates and seeds `comments`. |
+| Graph Supermemory target architecture | **Documented design** | Target only | `README.md` and this document describe ingestion, cited knowledge, graph, access, administration, worker, and webhook goals; no corresponding product implementation is claimed. |
+| Generated knowledge snapshots | **Generated knowledge** | None found | No generated README, overview, translation, mind-map, or Graphity artefacts are present in this revision; the metadata contract below is a design requirement only. |
+| Git repository ingestion | **Planned work** | Not implemented | No GitHub import, clone, or repository-ingestion code is present. |
+| ZIP archive ingestion | **Planned work** | Not implemented | No archive upload or extraction pipeline is present. |
+| Local-directory ingestion | **Planned work** | Not implemented | No local-directory intake contract or worker is present. |
+| README summaries and project overviews | **Planned work** | Not implemented | No knowledge extraction or summary pipeline is present. |
+| Wiki/document catalogue and document content | **Planned work** | Not implemented | No document index, storage model, or retrieval route is present. |
+| Reviewed multi-language translations | **Planned work** | Not implemented | No translation workflow, language metadata, or review state is present. |
+| Mermaid mind maps | **Planned work** | Not implemented | No mind-map generator, validator, or route is present. |
+| Optional Graphity artefacts | **Planned work** | Not implemented | No Graphity adapter or artefact contract is present. |
+| SEO routes `/{owner}/{repo}`, `/mindmap`, `/graphify` | **Planned work** | Not implemented | No route router or repository-scoped rendering is present. |
+| Repository-scoped MCP | **Planned work** | Not implemented | No MCP server, tool registry, or repository authorization layer is present. |
+| Built-in chat and embedded chat APIs | **Planned work** | Not implemented | No chat UI, API, model-provider adapter, or conversation store is present. |
+| Share links | **Planned work** | Not implemented | No share-token or public-view implementation is present. |
+| Administration | **Planned work** | Not implemented | No users, roles, departments, repositories, API keys, providers/models, skills, MCP providers, or GitHub App administration is present. |
+| Background processing and incremental updates | **Planned work** | Not implemented | No queue, idempotency key, worker, checkpoint, or update-diff implementation is present. |
+| Feishu, QQ, WeChat, Slack webhooks | **Planned work** | Not implemented | No authenticated webhook adapters or signature verification are present. |
+| Deployment evidence | **Deployment evidence** | Not established | `wrangler.json` contains a Worker/D1 configuration, but no live Aicoetpk deployment URL, deployment record, or successful remote deployment was found. |
 
 ## Target knowledge contract
 
@@ -57,7 +59,7 @@ A translation or summary must preserve uncertainty and citation links; it must n
 
 ## Sources
 
-- Repository source at the snapshot revision: <https://github.com/aiforfreecloud-sudo/aicoetpk/tree/13e8c649c96a5bdd75e0ea68695f4cde9469907b>
-- Worker entry point: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/13e8c649c96a5bdd75e0ea68695f4cde9469907b/src/index.ts>
-- D1 migration: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/13e8c649c96a5bdd75e0ea68695f4cde9469907b/migrations/0001_create_comments_table.sql>
+- Repository source at the snapshot revision: <https://github.com/aiforfreecloud-sudo/aicoetpk/tree/960424965cfdfd0437f39951bea6f408a67397df>
+- Worker entry point: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/960424965cfdfd0437f39951bea6f408a67397df/src/index.ts>
+- D1 migration: <https://github.com/aiforfreecloud-sudo/aicoetpk/blob/960424965cfdfd0437f39951bea6f408a67397df/migrations/0001_create_comments_table.sql>
 - Cloudflare D1 documentation: <https://developers.cloudflare.com/d1/>
